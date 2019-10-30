@@ -1,5 +1,5 @@
 # SSL certificates for development
-# $ mkcert maks-oliynik.local www.maks-oliynik.local
+# $ mkcert maks-oliynik.local www.maks-oliynik.local maksym-oliynik.local www.maksym-oliynik.local
 #
 # DEVELOPMENT:
 # $ docker-compose -f docker-compose.yml -f docker-compose-dev.yml up -d
@@ -24,15 +24,15 @@ services:
     restart: always
     labels:
       # - traefik.enable=false
-      - traefik.http.frontend.rule=Host:maks-oliynik.local,www.maks-oliynik.local
+      - traefik.http.frontend.rule=Host:maks-oliynik.local,www.maks-oliynik.local,maksym-oliynik.local,www.maksym-oliynik.local
       - traefik.http.frontend.entryPoints=http
-      - traefik.https.frontend.rule=Host:maks-oliynik.local,www.maks-oliynik.local
+      - traefik.https.frontend.rule=Host:maks-oliynik.local,www.maks-oliynik.local,maksym-oliynik.local,www.maksym-oliynik.local
       - traefik.https.frontend.entryPoints=https
       - traefik.https.protocol=https
       - traefik.https.port=443
     # Must add extra_hosts to be written to /etc/hosts - otherwise containerized application can not curl itself
     extra_hosts:
-      - "maks-oliynik.local www.maks-oliynik.local:127.0.0.1"
+      - "maks-oliynik.local www.maks-oliynik.local maksym-oliynik.local www.maksym-oliynik.local:127.0.0.1"
 #    links:
 #      - memcached
     external_links:

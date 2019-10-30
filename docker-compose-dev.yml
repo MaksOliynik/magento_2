@@ -8,10 +8,10 @@ services:
     sysctls:
       - net.ipv4.ip_unprivileged_port_start=0
     labels:
-      - traefik.http.frontend.rule=Host:maks-oliynik.local,www.maks-oliynik.local
-      - traefik.https.frontend.rule=Host:maks-oliynik.local,www.maks-oliynik.local
+      - traefik.http.frontend.rule=Host:maks-oliynik.local,www.maks-oliynik.local,maksym-oliynik.local,www.maksym-oliynik.local
+      - traefik.https.frontend.rule=Host:maks-oliynik.local,www.maks-oliynik.local,maksym-oliynik.local,www.maksym-oliynik.local
       # develop with extension that allows setting livereload host and port - https://github.com/lokcito/livereload-extensions
-      - traefik.grunt.frontend.rule=Host:maks-oliynik.local,www.maks-oliynik.local
+      - traefik.grunt.frontend.rule=Host:maks-oliynik.local,www.maks-oliynik.local,maksym-oliynik.local,www.maksym-oliynik.local
       - traefik.grunt.frontend.entryPoints=grunt
       - traefik.grunt.protocol=http
       - traefik.grunt.port=35729
